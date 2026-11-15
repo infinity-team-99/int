@@ -1,0 +1,123 @@
+body {
+    background: url(https://www.wallpaperalchemy.com/storage/wallpapers/973/interstellar-black-hole-gargantua-4k-wallpaper.jpg) no-repeat bottom/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    perspective: 1200px;
+    /* animation-name: gg;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out; */
+    /* 3D fazo effekti uchun muhim */
+}
+
+/* Oyna turgan konteyner 3D makonni ushlab turadi */
+.paper-container {
+    width: 400px;
+    height: 250px;
+    perspective: 10px;
+    animation-name: gg;
+    animation-duration: 10s;
+
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    position: relative;
+    top: 150px;
+    left: 100px;
+
+}
+
+@keyframes gg {
+    0% {
+        perspective: 1000px;
+
+    }
+
+    100% {
+
+        perspective: 1px;
+    }
+}
+
+
+
+.mac-window {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkURuRsVKG1tTIinHSJRdxjxKGDfCokkIp6zOdIdzDOeovuMX9CDsTVUiF&s=10) center/cover no-repeat; */
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    /* Qog'oz kabi buklangan boshlang'ich holat */
+    transform-origin: top center;
+    /* Yuqori qismidan ochiladi */
+    transform: rotateX(90deg) scaleY(0.1);
+    opacity: 0;
+
+    /* Silliq va elastik animatsiya */
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
+        opacity 0.4s ease;
+}
+
+/* Ochilgan holat (tekis qog'oz) */
+.paper-container.open .mac-window {
+    transform: rotateY(20deg) scaleY(1);
+    opacity: 1;
+}
+
+/* Oyna bosh qismi va dizayni */
+.window-header {
+    height: 30px;
+    background: #3c3c3c;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    gap: 6px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red {
+    background: #ff5f56;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
+
+.window-body {
+    padding: 20px;
+    color: #fff;
+}
+
+/* Tugma dizayni */
+button {
+    margin-top: 40px;
+    padding: 10px 20px;
+    background: #007aff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #005ec4;
+}
